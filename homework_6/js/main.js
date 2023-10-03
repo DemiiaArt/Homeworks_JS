@@ -1,48 +1,66 @@
 let birthdayDate = prompt('Write your birthday year');
-let userLocation = prompt('Where do you live?');
-let userSport = prompt('What kind of sport do you prefer?');
+let userAge = '';
+let userAgeMessage = '';
 
-const userAge = 2023 - parseInt(birthdayDate);
-
-let userCity = '';
-if (userLocation === 'Kyiv') {
-    userCity = `You live in the capital city - ${userLocation}.`;
-} else if (userLocation === 'Washington') {
-    userCity = `You live in the capital city - ${userLocation}.`;
-} else if (userLocation === 'London') {
-    userCity = `You live in the capital city - ${userLocation}.`;
-} else {
-    userCity = `You live in the ${userLocation} city.`;
+while (isNaN(birthdayDate)) {
+    alert('Oh no, write your birthday year as a number');
+    birthdayDate = prompt('Write your birthday year');
 }
 
+if (birthdayDate === null || birthdayDate.trim() === '') {
+    alert('It is a pity that you didnt want to enter yours birthday yaer =( ');
+} else {
+        userAge = 2023 - parseInt(birthdayDate);
+        userAgeMessage = `You are ${userAge} years old.`
+}
+
+let userLocation = prompt('Where do you live?');
+let userCity = '';
+
+if (userLocation === null || userLocation.trim() === '') {
+    alert('It is a pity that you didnt want to enter yours city =( ');
+} else {
+    if (userLocation.trim() === 'Kyiv') {
+        userCity = `You live in the capital city - ${userLocation}.`;
+    } else if (userLocation.trim() === 'Washington') {
+        userCity = `You live in the capital city - ${userLocation}.`;
+    } else if (userLocation.trim() === 'London') {
+        userCity = `You live in the capital city - ${userLocation}.`;
+    } else {
+        userCity = `You live in the ${userLocation} city.`;
+    }
+}
+
+
+let userSport = prompt('What kind of sport do you prefer?');
 let sportMessage = '';
 let sportIdol = '';
 
-switch(userSport) {
-    case 'football': 
-        sportIdol = 'Cristiano Ronaldo';
-        sportMessage = `Cool! Your favourite sport is ${userSport}. Will you want to be as ${sportIdol}? `;
-        break;
-    case 'basketball': 
-        sportIdol = 'Maikl Jordan';
-        sportMessage = `Cool! Your favourite sport is ${userSport}. Will you want to be as ${sportIdol}? `;
-        break;
-    case 'racing': 
-        sportIdol = 'Michael Schumacher';
-        sportMessage = `Cool! Your favourite sport is ${userSport}. Will you want to be as ${sportIdol}? `;
-        break;
-    default:
-        sportMessage = `Cool! Your favourite sport is ${userSport}. `
-}
-
-
-if (!birthdayDate) {
-    alert(`It is a pity that you didnt want to enter yours birthday yaer =(  ${userCity} ${sportMessage} `);
-} else if (!userLocation) {
-    alert(`It is a pity that you didnt want to enter yours city =(  You are ${userAge} years old. ${sportMessage}`);
-} else if (!userSport) {
-    alert(`It is a pity that you didnt want to enter yours favourite sport =(  You are ${userAge} years old. ${userCity}`);
+if (userSport === null || userSport.trim() === '') {
+    alert('It is a pity that you didnt want to enter yours favourite sport =( ');
 } else {
-    alert(`You are ${userAge} years old. ${userCity} ${sportMessage}`);
+    switch (userSport) {
+        case 'football':
+            sportIdol = 'Cristiano Ronaldo';
+            sportMessage = `Cool! Your favourite sport is ${userSport}. Will you want to be as ${sportIdol}? `;
+            break;
+        case 'basketball':
+            sportIdol = 'Maikl Jordan';
+            sportMessage = `Cool! Your favourite sport is ${userSport}. Will you want to be as ${sportIdol}? `;
+            break;
+        case 'racing':
+            sportIdol = 'Michael Schumacher';
+            sportMessage = `Cool! 1587Your favourite sport is ${userSport}. Will you want to be as ${sportIdol}? `;
+            break;
+        default:
+            sportMessage = `Cool! Your favourite sport is ${userSport}. `
+    }
 }
 
+
+
+if ((birthdayDate === null || birthdayDate.trim() === '') && (userLocation === null || userLocation.trim() === '') && (userSport === null || userSport.trim() === '') ) {
+    alert('Oh no! It is no information about you =(')
+} else {
+    alert(`${userAgeMessage} ${userCity} ${sportMessage}`);
+}
