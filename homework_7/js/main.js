@@ -1,5 +1,5 @@
 let numOrStr = prompt('input number or string');
-console.log(numOrStr)
+// console.log(numOrStr)
 
 // if(numOrStr === null) {
 // console.log('ви скасували')
@@ -11,17 +11,24 @@ console.log(numOrStr)
 // console.log('OK!')
 // }
 
-switch (true) {
-    case numOrStr === null:
+
+switch (numOrStr === null) {
+    case true:
         console.log('ви скасували');
         break;
-    case numOrStr.trim() === '':
-        console.log('Empty String');
-        break;
-    case isNaN( +numOrStr ):
-        console.log(' number is Ba_NaN');
-        break;
     default:
-        console.log('OK!');
-        break;
+        switch (numOrStr.trim()) {
+            case '': 
+                console.log('Empty String');
+                break;
+            default: 
+                switch (isNaN(numOrStr)) {
+                    case false:
+                        console.log(' number is Ba_NaN');
+                        break;
+                    default: 
+                        console.log('OK!');
+                        break;
+                }
+        }
 }
