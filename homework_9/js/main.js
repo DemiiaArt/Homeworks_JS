@@ -22,7 +22,6 @@ for (let i = 10; i <= 100; i += 10) {
 }
 */
 
-
 /*//3. Дане ціле число. Вивести всі цілі числа від 1 до 100, квадрат яких не перевищує числа N.
 
 let n = +prompt('Введіть ціле число: ');
@@ -36,7 +35,6 @@ for (let i = 1; i <= 100; i++) {
     }
 }
 */
-
 
 /*//4. Дане ціле число. З'ясувати, чи є воно простим (простим називається число, більше 1, які не мають інших дільників крім 1 і себе).
 
@@ -61,7 +59,7 @@ if (isTrue) {
 }
 */
 
-//5. Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).
+/*//5. Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).
 
 let n = +prompt('Введіть ціле число: ');
 let N = parseInt(n);
@@ -70,7 +68,7 @@ let isTrue = false;
 let number = '';
 
 
-for (let i = 1;; i++) {
+for (let i = 1; i < N; i++) {
     if (3 ** i === N) {
         isTrue = true;
         number = i;
@@ -83,128 +81,4 @@ if (isTrue) {
 } else {
     text.innerHTML = `Введене число ${N} не можна отримати возвівши число 3 у ступінь`;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/*//6. Знайти середнє арифметичне всіх цілих чисел від 1 до 500.
-
-let numbers = 0;
-let lastNumber = 500
-
-for (let i = 1; i <= lastNumber; i++) {
-    numbers += i;
-}
-
-let arithm = numbers / lastNumber;
-
-console.log(arithm);
-
 */
-
-/*//7. Вивести суму лише парних чисел в діапазоні від 30 до 80.
-
-let sum = 0
-
-for (let i = 30; i <= 80; i += 2) {
-    sum += i;
-}
-
-console.log(sum);
-*/
-
-/*//8. Вивести всі числа в діапазоні від 100 до 200 кратні 3.
-
-let numbers = 100
-
-while (numbers <= 200) {
-    if (numbers % 3 === 0) {
-        console.log(numbers);
-    }
-numbers++;
-}
-
-*/
-
-/*//9. Дано натуральне число. Знайти та вивести на сторінку всі його дільники.
-
-let N = +prompt('Введіть ціле число: ');
-let h1 = document.getElementById('title');
-let text = document.getElementById('table');
-
-h1.innerHTML = `Введене число: ${N}`;
-text.innerHTML = `Дільники:  <br>`;
-
-for (let i = 1; i <= N; i++) {
-    if (N % i === 0) {
-        text.innerHTML += ` ${i},  `;
-    }
-}
-*/
-
-/*//10. Визначити кількість його парних дільників.
-
-let N = +prompt('Введіть ціле число: ');
-let h1 = document.getElementById('title');
-let text = document.getElementById('table');
-let numbers = [];
-
-h1.innerHTML = `Введене число: ${N}`;
-text.innerHTML = `Парні дільники:  <br>`;
-
-for (let i = 1; i <= N; i++) {
-    if (N % i === 0 && i % 2 === 0) {
-        numbers.push(i);
-        text.innerHTML += ` ${i},  `;
-    }
-}
-
-text.innerHTML = `${text.innerHTML} <br> А їх кількість = ${numbers.length} шт.`;
-*/
-
-/*//11. Знайти суму його парних дільників.
-
-let N = +prompt('Введіть ціле число: ');
-let h1 = document.getElementById('title');
-let text = document.getElementById('table');
-let sum = 0;
-
-h1.innerHTML = `Введене число: ${N}`;
-text.innerHTML = `Парні дільники:  <br>`;
-
-for (let i = 1; i <= N; i++) {
-    if (N % i === 0 && i % 2 === 0) {
-        text.innerHTML += ` ${i},  `;
-        sum += i;
-    }
-}
-
-text.innerHTML = `${text.innerHTML} <br> А їх сума = ${sum}`;
-
-*/
-
-/*//12. Надрукувати повну таблицю множення від 1 до 10.
-
-let numbers = '';
-let h1 = document.getElementById('title');
-let text = document.getElementById('table')
-
-h1.innerHTML = `Таблиця множення`;
-
-for ( let x = 1; x <= 10; x++) {
-    for (i = 1; i <= 10; i++) {
-        numbers += `${x} * ${i} = ${x * i}` + '<br>';
-    }
-    numbers += '<hr>'
-}
-text.innerHTML = numbers;
-*/
-
