@@ -65,7 +65,7 @@ console.log(arithm);
 
 */
 
-//7. Вивести суму лише парних чисел в діапазоні від 30 до 80.
+/*//7. Вивести суму лише парних чисел в діапазоні від 30 до 80.
 
 let sum = 0
 
@@ -74,3 +74,92 @@ for (let i = 30; i <= 80; i += 2) {
 }
 
 console.log(sum);
+*/
+
+/*//8. Вивести всі числа в діапазоні від 100 до 200 кратні 3.
+
+let numbers = 100
+
+while (numbers <= 200) {
+    if (numbers % 3 === 0) {
+        console.log(numbers);
+    }
+numbers++;
+}
+
+*/
+
+/*//9. Дано натуральне число. Знайти та вивести на сторінку всі його дільники.
+
+let N = +prompt('Введіть ціле число: ');
+let h1 = document.getElementById('title');
+let text = document.getElementById('table');
+
+h1.innerHTML = `Введене число: ${N}`;
+text.innerHTML = `Дільники:  <br>`;
+
+for (let i = 1; i <= N; i++) {
+    if (N % i === 0) {
+        text.innerHTML += ` ${i},  `;
+    }
+}
+*/
+
+/*//10. Визначити кількість його парних дільників.
+
+let N = +prompt('Введіть ціле число: ');
+let h1 = document.getElementById('title');
+let text = document.getElementById('table');
+let numbers = [];
+
+h1.innerHTML = `Введене число: ${N}`;
+text.innerHTML = `Парні дільники:  <br>`;
+
+for (let i = 1; i <= N; i++) {
+    if (N % i === 0 && i % 2 === 0) {
+        numbers.push(i);
+        text.innerHTML += ` ${i},  `;
+    }
+}
+
+text.innerHTML = `${text.innerHTML} <br> А їх кількість = ${numbers.length} шт.`;
+*/
+
+/*//11. Знайти суму його парних дільників.
+
+let N = +prompt('Введіть ціле число: ');
+let h1 = document.getElementById('title');
+let text = document.getElementById('table');
+let sum = 0;
+
+h1.innerHTML = `Введене число: ${N}`;
+text.innerHTML = `Парні дільники:  <br>`;
+
+for (let i = 1; i <= N; i++) {
+    if (N % i === 0 && i % 2 === 0) {
+        text.innerHTML += ` ${i},  `;
+        sum += i;
+    }
+}
+
+text.innerHTML = `${text.innerHTML} <br> А їх сума = ${sum}`;
+
+*/
+
+/*//12. Надрукувати повну таблицю множення від 1 до 10.
+
+let numbers = '';
+let h1 = document.getElementById('title');
+let text = document.getElementById('table')
+
+h1.innerHTML = `Таблиця множення`;
+
+for ( let x = 1; x <= 10; x++) {
+    for (i = 1; i <= 10; i++) {
+        numbers += `${x} * ${i} = ${x * i}` + '<br>';
+    }
+    numbers += '<hr>'
+}
+text.innerHTML = numbers;
+*/
+
