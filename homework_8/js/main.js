@@ -20,7 +20,10 @@ console.log(numbers);
 
 /*//3. Вивести таблицю множення на 7.
 let numbers = '';
+let h1 = document.getElementById('title');
 let text = document.getElementById('table')
+
+h1.innerHTML = `Таблиця множення на 7`;
 
 for (let i = 1; i <= 10; i++) {
     numbers = numbers + `7 * ${i} = ${7*i}` + '<br>';
