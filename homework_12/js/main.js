@@ -74,5 +74,5 @@ const balancesSumm = users.reduce(function(balancesSumm, user) {
     return balancesSumm + balanceNumber;
 }, 0);
 
-const formatSumm = balancesSumm.toFixed(2)
-console.log(`Сума всіх балансів користувачів: $${formatSumm}`);
+const formatSumm = balancesSumm.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+console.log(`Сума всіх балансів користувачів: ${formatSumm}`);
