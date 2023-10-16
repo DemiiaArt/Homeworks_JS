@@ -69,7 +69,7 @@ const phoneBase = users.reduce(function(phoneBase, user) {
 console.log('База телефонних номерів користувачів, у яких баланс більше 2000 доларів: ', phoneBase);
 
 const balancesSumm = users.reduce(function(balancesSumm, user) {
-    let balanceNumber = parseFloat(user.balance.replace('$', '').replace(',', ''));
+    let balanceNumber = parseFloat(user.balance.replace(/[$,]/g, ''));
 
     return balancesSumm + balanceNumber;
 }, 0);
