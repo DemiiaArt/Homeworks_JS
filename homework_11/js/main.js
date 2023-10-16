@@ -17,7 +17,7 @@ console.log('Сума позитивних елементів:',positivElementsS
 */
 
 
-/*//=====2.Знайти мінімальний елемент масиву та його порядковий номер.=====
+//=====2.Знайти мінімальний елемент масиву та його порядковий номер.=====
 const myArray = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 
     27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
 console.log('Дано масив:', myArray);
@@ -40,8 +40,8 @@ console.log('Дано масив:', myArray);
 
 
 // =====> Варіант 2 знаходження мінімального значення =======> через Math.min
-const minElement = Math.min(...myArray);
-console.log('мінімальний елемент масиву: ', minElement);
+// const minElement = Math.min(...myArray);
+// console.log('мінімальний елемент масиву: ', minElement);
 
 // =====> Варіант 3 знаходження мінімального значення =======> через сортування масиву
 // const sortedArray = myArray.toSorted(function(a, b) {
@@ -51,10 +51,31 @@ console.log('мінімальний елемент масиву: ', minElement);
 // const minElement = sortedArray[0];
 // console.log('Мінімальний елемент масиву: ', minElement);
 
+// =====> Варіант 4 знаходження мінімального значення =======> через псевдомасив arguments
+
+function findMin() {
+    if(arguments.length === 0) {
+        return undefined;
+    }
+
+    let min = arguments[0];
+
+    for (let i = 1; i < arguments.length; i++) {
+        if (arguments[i] < min) {
+            min = arguments[i];
+        }
+    }
+
+    return min;
+}
+const minElement = findMin(...myArray);
+
+console.log('Мінімальний елемент масиву: ', minElement);
+
 
 const minElementIndex = myArray.indexOf(minElement);
 console.log('Порядковий номер мінімального елементу масиву: ', minElementIndex + 1);
-*/
+
 
 
 /*//=====3.Знайти максимальний елемент масиву та його порядковий номер.=====
