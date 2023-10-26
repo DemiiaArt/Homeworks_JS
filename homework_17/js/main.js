@@ -26,6 +26,8 @@ console.log(sum(20));// 28
 * Parent: null
 */
 
+/*[Environment] = Global environment*/
+
 const allSumm = function() {
 
   /**
@@ -36,12 +38,20 @@ const allSumm = function() {
 
   let sum = 0;
 
-  /**
+  /**1
   * allSumm env
   * Record: {sum: 0}
   * Parent: Global env
   */
+
+  /**2
+  * allSumm env
+  * Record: {sum: 3}
+  * Parent: Global env
+  */
   
+  /*[Environment] = allSumm env*/
+
   return function(a) {
 
     /**
@@ -54,7 +64,7 @@ const allSumm = function() {
 
     /**
     * sum env
-    * Record: {a: 3, sum: 3}
+    * Record: {a: 3}
     * Parent: allSumm env
     */
 
@@ -76,13 +86,26 @@ const sum = allSumm();
 * Parent: null
 */
 
-console.log(sum(3));// return sum = 3 та перезаписує змінну sum в ф-ції allSumm
+// console.log(sum(3));// return sum = 3 та перезаписує змінну sum в ф-ції allSumm
 
 /**
 * Global env
 * Record: {allSumm: <function>, sum: <function>}
 * Parent: null
 */
+let result1 =  sum(3);
 
-console.log(sum(5));// return sum = 8
-console.log(sum(20));// return sum = 28
+let result2 =  sum(5);
+
+let result3 =  sum(20);
+
+let sum2 =  allSumm();
+
+let result2_1 = sum2(965);
+let result2_2 = sum2(25);
+
+console.log(result1, result2, result3);
+console.log(result2_1, result2_2);
+
+// console.log(sum(5));// return sum = 8
+// console.log(sum(20));// return sum = 28
