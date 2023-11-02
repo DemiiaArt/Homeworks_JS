@@ -95,6 +95,12 @@ const sum = allSumm();
 */
 let result1 =  sum(3);
 
+/**
+* Global env
+* Record: {allSumm: <function>, sum: <function>, result1: 3}
+* Parent: null
+*/
+
 let result2 =  sum(5);
 
 let result3 =  sum(20);
