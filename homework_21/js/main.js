@@ -55,7 +55,6 @@ let student1Marks = [95, 100, 90, 100, 100, 100, 100] //його оцінки
 const student1 = new Student ('Fred', 'Tomson', 25, student1Marks) //екземпляр класу Student
 console.log('Вік студента:', student1.age); //маємо можливість отримати вік студента
 console.log('Середня оцінка студента:', student1.averageMark); // маємо можливість отримати його середній бал
-console.log(student1);
 //відмічаємо його відвідуваність
 student1.absent()
 student1.absent()
@@ -91,7 +90,6 @@ let student2Marks = [90, 75, 85, 60, 80, 100, 70];
 const student2 = new Student ('Tania', 'Billins', 21, student2Marks);
 console.log('Вік студента:', student2.age);
 console.log('Середня оцінка студента:', student2.averageMark);
-console.log(student2);
 student2.absent()
 student2.absent()
 student2.present()
@@ -125,7 +123,6 @@ let student3Marks = [85, 100, 65, 60, 70, 60, 80];
 const student3 = new Student ('Vlad', 'Mols', 31, student3Marks);
 console.log('Вік студента:', student3.age);
 console.log('Середня оцінка студента:', student3.averageMark);
-console.log(student3);
 student3.absent()
 student3.absent()
 student3.absent()
