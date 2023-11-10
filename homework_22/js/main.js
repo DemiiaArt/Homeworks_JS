@@ -45,11 +45,21 @@ class Hamburger {
     }
 }
 
-const hamb1 = new Hamburger ('SIZE_SMALL', 'STUFFING_CHEESE')
-hamb1.addTopping('TOPPING_MAYO')
-hamb1.addTopping('TOPPING_SAUCE')
-console.log(hamb1);
+// маленький гамбургер з начинкою з сиру
+const hamb1 = new Hamburger ('SIZE_SMALL', 'STUFFING_CHEESE');
+// console.log(`Price:  ${hamb1.calculatePrice()} tugrykiv`);
+
+// добавка з майонезу
+hamb1.addTopping('TOPPING_MAYO');
+
+// запитаємо скільки там калорій
 console.log(`Calories: ${hamb1.calculate()} kkal`);
+
+// скільки коштує
 console.log(`Price:  ${hamb1.calculatePrice()} tugrykiv`);
+
+// я тут передумав і вирішив додати ще приправу
 hamb1.addTopping('TOPPING_SAUCE');
-console.log(`Price:  ${hamb1.calculatePrice()} tugrykiv`);
+
+// А скільки тепер коштує?
+console.log(`Price with sauce:  ${hamb1.calculatePrice()} tugrykiv`);
