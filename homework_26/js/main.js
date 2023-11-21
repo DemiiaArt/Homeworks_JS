@@ -87,14 +87,16 @@ setFirstItemClassNameL2 (1, root2);
 */
 
 //adding
-const root3 = document.querySelector('ul.root');
-console.log(root3);
+
 
 //доступ до всіх перших лішок будь-якої вкладеності
 // const setFirstItemClassNameL3WithQuerySelectorAll = (ul) => {
 //     const liFirst = ul.querySelectorAll('li:first-of-type')
 //     liFirst.forEach(li => li.classLIst.add('firstLevel'));
 // }
+
+const root3 = document.querySelector('ul.root');
+console.log(root3);
 
 const setFirstItemClassNameL3 = (level, ul) => {
 
@@ -108,7 +110,7 @@ const setFirstItemClassNameL3 = (level, ul) => {
             const innerUls = [...li.children];
             console.log(innerUls);
     
-            innerUls.forEach(innerUl => setFirstItemClassNameL3(_, innerUl));
+            innerUls.forEach(innerUl => setFirstItemClassNameL3(level, innerUl));
         });
     } else {
         const liFirst = ul.querySelector('li:first-of-type');
