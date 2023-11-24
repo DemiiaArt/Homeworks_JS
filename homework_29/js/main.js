@@ -11,7 +11,7 @@ someText.classList.add('text');
 
 
 window.addEventListener('keydown', (event) => {
-    console.log(event);
+    // console.log(event);
     const step = 10;
     const boxPosit = box.getBoundingClientRect(); 
     const parentBoxPosit = parentBox.getBoundingClientRect(); 
@@ -64,13 +64,25 @@ window.addEventListener('keydown', (event) => {
             break;
         case 'ControlLeft':
         case 'ControlRight': 
-            if (boxPosit.height === 200) {
-                box.style.height = boxPosit.height * 0.6 + 'px'
-                box.style.top = boxPosit.top + boxPosit.height * 0.4 + 'px'
+            const currentHeight = boxPosit.height;
+            const translateY = 200 * 0.4;
+            if (currentHeight === 200) {
+                const newHeight = currentHeight * 0.6;
+                const newWidth = currentHeight * 1.25;
+
+                box.style.top = `${boxPosit.top + translateY}px`;
+                box.style.height = `${newHeight}px`;
+                box.style.width = `${newWidth}px`;
+                console.log(box.getBoundingClientRect());
             } else {
-                box.style.height = 200 + 'px'
-                box.style.top = boxPosit.top - 200 * 0.4 + 'px'
+                const newHeight = 200;
+                // const translateY = currentHeight * 0.6;
+                box.style.height = `${newHeight}px`;
+                box.style.top = `${boxPosit.top - translateY}px`;
+                box.style.width = `${newHeight}px`;
+                console.log(box.getBoundingClientRect());
             }
+            break;
     }
 })
 
@@ -83,3 +95,7 @@ function bems() {
     }, 2000)
 }
 
+
+
+//1. При першому присіданні вилазить косяк
+//2. квадрат не доходить до краю екрану а одразу відскакує на 20 пкс
