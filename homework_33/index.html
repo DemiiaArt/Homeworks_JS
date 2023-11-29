@@ -9,65 +9,23 @@
 </head>
 <body>
     <div class="wrapper">
-        <ul id="categories" class="categories">
-            <li><span>category 1</span>
-                <ul>
-                    <li><span>product 1</span></li>
-                    <li><span>product 2</span></li>
-                    <li><span>product 3</span></li>
-                    <li><span>product 4</span></li>
-                    <li><span>product 5</span></li>
-                </ul>
-            </li>
-            <li><span>category 2</span>
-                <ul>
-                    <li><span>product 1</span></li>
-                    <li><span>product 2</span></li>
-                    <li><span>product 3</span></li>
-                </ul>
-            </li>
-            <li><span>category 3</span>
-                <ul>
-                    <li><span>product 1</span></li>
-                    <li><span>product 2</span></li>
-                    <li><span>product 3</span></li>
-                    <li><span>product 4</span></li>
-                    <li><span>product 5</span></li>
-                    <li><span>product 6</span></li>
-                    <li><span>product 7</span></li>
-                    <li><span>product 8</span></li>
-                </ul>
-            </li>
-            <li><span>category 4</span>
-                <ul>
-                    <li><span>product 1</span></li>
-                    <li><span>product 2</span></li>
-                    <li><span>product 3</span></li>
-                    <li><span>product 4</span></li>
-                    <li><span>product 5</span></li>
-                </ul>
-            </li>
-            <li><span>category 5</span>
-                <ul>
-                    <li><span>product 1</span></li>
-                    <li><span>product 2</span></li>
-                    <li><span>product 3</span></li>
-                    <li><span>product 4</span></li>
-                    <li><span>product 5</span></li>
-                </ul>
-            </li>
-            <li><span>category 6</span>
-                <ul>
-                    <li><span>product 1</span></li>
-                    <li><span>product 2</span></li>
-                    <li><span>product 3</span></li>
-                    <li><span>product 4</span></li>
-                    <li><span>product 5</span></li>
-                </ul>
-            </li>
-        </ul>
-        <ul id="products-list" class="products-list"></ul>
-        <div id="product-info"></div>
+        <div id="categories" class="categories">
+            <ul class="categoryList">
+                <li data-category="category-1">Category 1</li>
+                <li data-category="category-2">Category 2</li>
+                <li data-category="category-3">Category 3</li>
+                <li data-category="category-4">Category 4</li>
+                <li data-category="category-5">Category 5</li>
+                <li data-category="category-6">Category 6</li>
+            </ul>
+        </div>
+        <div class="products">
+            <ul class="products-list"></ul>
+        </div>
+        <div id="product-info" class="product-info">
+            <h3>Details</h3>
+            <button id="buyBtn">Buy</button>
+        </div>
     </div>
     <script src="./js/main.js"></script>
 </body>
