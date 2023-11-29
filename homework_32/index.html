@@ -7,13 +7,17 @@
     <title>Document</title>
 </head>
 <style>
-    h2 {
-        text-align: center;
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+
     .list {
         display: flex;
         list-style: none;
         gap: 5px;
+
     }
 
     .smile {
@@ -30,35 +34,32 @@
 </style>
 
 <body>
-    
-    <h2>Який у тебе день сьогодні?</h2>
+    <div class="wrapper">
+        <h2>Який у тебе день сьогодні?</h2>
 
-    <ul class="list" id="list">
-        <li>
-            <button class="smile">&#128293</button>
-            <p class="counter"></p>
-        </li>
-        <li>
-            <button class="smile">&#128513</button>
-            <p class="counter"></p>
-        </li>
-        <li>
-            <button class="smile">&#128526</button>
-            <p class="counter"></p>
-        </li>
-        <li>
-            <button class="smile">&#128520</button>
-            <p class="counter"></p>
-        </li>
-        <li>
-            <button class="smile">&#128533</button>
-            <p class="counter"></p>
-        </li>
-        <li>
-            <button class="smile">&#128557</button>
-            <p class="counter"></p>
-        </li>
-    </ul>
+        <ul class="list" id="list">
+            <li>
+                <button class="smile">&#128293</button>
+            </li>
+            <li>
+                <button class="smile">&#128513</button>
+            </li>
+            <li>
+                <button class="smile">&#128526</button>
+            </li>
+            <li>
+                <button class="smile">&#128520</button>
+            </li>
+            <li>
+                <button class="smile">&#128533</button>
+            </li>
+            <li>
+                <button class="smile">&#128557</button>
+            </li>
+        </ul>
+    </div>
+    
+    
     <script src="./js/main.js"></script>
 </body>
 
