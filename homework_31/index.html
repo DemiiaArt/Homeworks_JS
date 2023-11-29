@@ -7,11 +7,47 @@
     <title>Document</title>
 </head>
 <style>
+    .wrapper {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 50px;
+    }
     
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    button, 
+    a {
+        cursor: default;
+        border-radius: 5px;
+        font-size: 16px;
+        padding: 5px 15px;
+        border: 1px solid rgb(212, 212, 212);
+        color: rgb(175, 175, 175);
+    }
+
+    .active {
+        cursor: pointer;
+        background: rgb(255, 250, 250);
+        border: 1px solid rgb(29, 29, 29);
+        color: black;
+    }
+
+    .positive {
+        background: rgb(155, 255, 155);
+        border: 1px solid green;
+    }
 </style>
 
 <body>
-    
+    <div class="wrapper">
+        <button id="user-prompt" class="active">Enter the LINK</button>
+        <a id="go" href="#">G0!</a>
+    </div>
+
     <script src="./js/main.js"></script>
 </body>
 
