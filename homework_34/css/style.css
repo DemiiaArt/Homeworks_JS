@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    display: block;
+    border-collapse: collapse;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgb(228, 221, 233);
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px 10px;
+}
+
