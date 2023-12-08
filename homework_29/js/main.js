@@ -1,7 +1,7 @@
 const box = document.querySelector('.box')
 const root = document.querySelector('.root')
 const parentBox = document.querySelector('body')
-console.log(box.getBoundingClientRect());
+// console.log(box.getBoundingClientRect());
 // console.dir(box);
 
 const someText = document.createElement('h2')
@@ -9,13 +9,21 @@ parentBox.insertBefore(someText, root)
 // someText.textContent = 'БЕМС';
 someText.classList.add('text');
 
+function bems() {
+    someText.textContent = 'БЕМС !';
+    someText.style.opacity = '1'
+    setTimeout(() => {
+        someText.textContent = ''
+        someText.style.opacity = '0'
+    }, 2000)
+}
 
 window.addEventListener('keydown', (event) => {
-    // console.log(event);
+
     const step = 10;
     const boxPosit = box.getBoundingClientRect(); 
     const parentBoxPosit = parentBox.getBoundingClientRect(); 
-    // console.log(parentBoxPosit);
+    
     let newTop = boxPosit.top
     let newLeft = boxPosit.left
 
@@ -64,7 +72,8 @@ window.addEventListener('keydown', (event) => {
             break;
         case 'ControlLeft':
         case 'ControlRight': 
-            const currentHeight = boxPosit.height;
+            const currentHeight = Math.floor(boxPosit.height);
+            // console.log(currentHeight);
             const translateY = 200 * 0.4;
             if (currentHeight === 200) {
                 const newHeight = currentHeight * 0.6;
@@ -73,27 +82,20 @@ window.addEventListener('keydown', (event) => {
                 box.style.top = `${boxPosit.top + translateY}px`;
                 box.style.height = `${newHeight}px`;
                 box.style.width = `${newWidth}px`;
-                console.log(box.getBoundingClientRect());
+                // console.log(box.getBoundingClientRect());
             } else {
                 const newHeight = 200;
                 // const translateY = currentHeight * 0.6;
                 box.style.height = `${newHeight}px`;
                 box.style.top = `${boxPosit.top - translateY}px`;
                 box.style.width = `${newHeight}px`;
-                console.log(box.getBoundingClientRect());
+                // console.log(box.getBoundingClientRect());
             }
             break;
     }
 })
 
-function bems() {
-    someText.textContent = 'БЕМС !';
-    someText.style.opacity = '1'
-    setTimeout(() => {
-        someText.textContent = ''
-        someText.style.opacity = '0'
-    }, 2000)
-}
+
 
 
 
