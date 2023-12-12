@@ -1,0 +1,48 @@
+li.animal::marker{
+    content: '😹 ';
+}
+li.celebrity::marker{
+    content: '🤩 ';
+}
+li.career::marker{
+    content: '💼 ';
+}
+li.religion::marker{
+    content: '⛪ ';
+}
+li.dev::marker{
+    content: '💻 ';
+}
+li.explicit::marker{
+    content: '🔞 ';
+}
+li.fashion::marker{
+    content: '👠 ';
+}
+li.food::marker{
+    content: '🍕 ';
+}
+li.history::marker{
+    content: '🗿 ';
+}
+li.money::marker{
+    content: '💰 ';
+}
+li.movie::marker{
+    content: '🎬 ';
+}
+li.music::marker{
+    content: '🎵 ';
+}
+li.political::marker{
+    content: '🤠 ';
+}
+li.science::marker{
+    content: '🤓 ';
+}
+li.sport::marker{
+    content: '⚽ ';
+}
+li.travel::marker{
+    content: '🌍 ';
+}
