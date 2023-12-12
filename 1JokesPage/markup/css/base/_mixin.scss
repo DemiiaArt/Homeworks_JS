@@ -1,0 +1,23 @@
+// h2-h6  @include h
+@mixin h($fw: 700, $fs: 30px, $lh: normal) {
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;
+    color: $black;
+}
+
+// box_img
+%box_img {
+    position: relative;
+    border-radius: $br;
+    overflow: hidden;
+}
+
+// img 
+%img {
+    max-width: none;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+}
