@@ -2,18 +2,18 @@
 
 // Base style
 @import "./base/variable";
-@import "./base/mixin";
 @import "./base/base";
 @import "./base/icomon";
 
 // sections
+@import "./sections/header";
 @import "./sections/main";
 
 // Style Start
-// @import "./components/identity";
-// @import "./components/menu";
+@import "./components/like";
+@import "./components/menu";
 // @import "./components/tag";
 // @import "./components/button";
 // @import "./components/card";
 // @import "./components/other";
-// @import "./components/form";
+@import "./components/form";

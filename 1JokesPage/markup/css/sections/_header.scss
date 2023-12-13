@@ -1,0 +1,38 @@
+header {
+    position: fixed;
+    width: 100%;
+    padding-top: 20px;
+    font-size: 20px;
+
+    .container {
+        position: relative;
+    }
+
+    p {
+        margin: 0;
+        font-weight: 700;
+    }
+
+    .burgerMenu {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+
+        &:last-child {
+            color: $text_lite;
+            font-weight: 500;
+        }
+
+        input {
+            visibility: hidden;
+        }
+    }
+}
+
+
+

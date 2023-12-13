@@ -3,43 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jokes</title>
-    <link rel="shortcut icon" href="" type="image/jpg">
+    <title>Chuck Norris Jokes</title>
+    <link rel="shortcut icon" href="./img/emoji_emoticon_happy_laugh_icon.svg" type="image/jpg">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div class="wrapper">
-        <section>
-            <h1></h1>
-            <form>
-                <h2></h2>
-                <label>
-                    <input type="radio" name="jokeFinder" id="random">
-                    <span>Random</span>
+        <header>
+            <div class="container">
+                <p>MSI 2020</p>
+                <label class="burgerMenu">
+                    <input id="burgerIconCheck" type="checkbox" name="open-close">
+                    <span class="burgerIcon"></span>
+                    <span>Favourite</span>
                 </label>
-                <label>
-                    <input type="radio" name="jokeFinder" id="caterogies">
-                    <span>From caterogies</span>
-                    <ul class="jokesCategories" id="jokesCategories">
-                        <li>animal</li>
-                        <li>career</li>
-                        <li class="current">celebrity</li>
-                        <li>dev</li>
+            </div>
+        </header>
+        <main>
+            <section>
+                <div class="container">
+                    <h1>Hey!</h1>
+                    <form>
+                        <h2>Let’s try to find a joke for you:</h2>
+                        <label>
+                            <input type="radio" name="jokeFinder" id="random">
+                            <span class="currentRadio"></span>
+                            <span>Random</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="jokeFinder" id="caterogies">
+                            <span></span>
+                            <span>From caterogies</span>
+                        </label>
+                        <ul class="jokesCategories" id="jokesCategories">
+                            <li>animal</li>
+                            <li>career</li>
+                            <li class="current">celebrity</li>
+                            <li>dev</li>
+                        </ul>
+                        <label>
+                            <input type="radio" name="jokeFinder" id="search">
+                            <span></span>
+                            <span>Search</span>
+                        </label>
+                        <input id="searchindField" type="search" placeholder="Free text search...">
+                        <button id="getAJoke">Get a joke</button>
+                    </form>
+                    <ul id="jokesList">
+                        <li class="card">
+                            <span>icon</span>
+                            <div class="card__body">
+                                <p>ID: <a href="#">XNaAxUduSw6zANDaIEab7A <span class="icon-link"></span></a></p>
+                                <p>No one truly knows who's Chuck Norris' real father. 
+                                    No one is biologically strong enough for this. He must've conceived himself.</p>
+                                <div class="card__info">
+                                    <p>Last update: <span>1923 hours ago</span></p>
+                                    <span>celebrity</span>
+                                </div>
+                            </div>
+                            <span class="icon-heart"></span>
+                        </li>
+                        <li class="card">
+                            <span>icon</span>
+                            <div class="card__body">
+                                <p>ID: <a href="#">XNaAxUduSw6zANDaIEab7A <span class="icon-link"></span></a></p>
+                                <p>No one truly knows who's Chuck Norris' real father. 
+                                    No one is biologically strong enough for this. He must've conceived himself.</p>
+                                <div class="card__info">
+                                    <p>Last update: <span>1923 hours ago</span></p>
+                                    <span>celebrity</span>
+                                </div>
+                            </div>
+                            <span class="icon-Vector"></span>
+                        </li>
                     </ul>
-                </label>
-                <label>
-                    <input type="radio" name="jokeFinder" id="search">
-                    <span>Search</span>
-                    <input type="search" placeholder="Free text search...">
-                </label>
-                <button id="getAJoke">Get a joke</button>
-            </form>
-            <ul id="jokesList">
-                <li>
-                    
-                </li>
-            </ul>
-        </section>
+                </div>
+            </section>
+            <div class="backdrop">
+                <section class="burger">
+                    <div class="container">
+                        <h3>Favourite</h3>
+                        <ul id="likedJokesList">
+                            <li class="card card--mini">
+                                <span>icon</span>
+                                <div class="card__body">
+                                    <p>ID: <a href="#">XNaAxUduSw6zANDaIEab7A <span class="icon-link"></span></a></p>
+                                    <p>No one truly knows who's Chuck Norris' real father. 
+                                        No one is biologically strong enough for this. He must've conceived himself.</p>
+                                    <div class="card__info">
+                                        <p>Last update: <span>1923 hours ago</span></p>
+                                    </div>
+                                </div>
+                                <span class="icon-heart"></span>
+                            </li>
+                            <li class="card card--mini">
+                                <span>icon</span>
+                                <div class="card__body">
+                                    <p>ID: <a href="#">XNaAxUduSw6zANDaIEab7A <span class="icon-link"></span></a></p>
+                                    <p>Chuck Norris can put a plane in reverse.</p>
+                                    <div class="card__info">
+                                        <p>Last update: <span>1923 hours ago</span></p>
+                                    </div>
+                                </div>
+                                <span class="icon-heart"></span>
+                            </li>
+                            <li class="card card--mini">
+                                <span>icon</span>
+                                <div class="card__body">
+                                    <p>ID: <a href="#">XNaAxUduSw6zANDaIEab7A <span class="icon-link"></span></a></p>
+                                    <p>Chuck Norris doesn't bench press weight sets, he bench presses FREIGHT TRAINS!</p>
+                                    <div class="card__info">
+                                        <p>Last update: <span>1923 hours ago</span></p>
+                                    </div>
+                                </div>
+                                <span class="icon-heart"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
     </div>
     <script src="./js/main.js" type="module"></script>
 </body>
