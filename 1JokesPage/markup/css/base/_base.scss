@@ -37,8 +37,9 @@ body {
 }
 
 .wrapper {
-    display: flex;
-    // flex-direction: column;
+    // display: flex; //desktop only
+    position: relative;
+    overflow: hidden;
 }
 
 .container {
@@ -65,13 +66,15 @@ ul {
 }
 
 a {
-    color: $link; 
+    color: $link;
+    font-size: 10px; 
+    line-height: 14px;
+    font-weight: 500;
 
     span {
         // display: inline-block;
         // width: 10px;
         // height: 10px;
-        font-size: 14px;
         vertical-align: baseline;
     }
 }

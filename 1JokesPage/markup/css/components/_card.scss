@@ -1,0 +1,67 @@
+.card {
+    padding: 47px 20px 20px;
+    background: $lite_bg;
+    border-radius: 20px;
+    border: none;
+    position: relative;
+
+    display: flex;
+    gap: 20px;
+
+    p {
+        margin: 0;
+    }
+
+    .jokeIcon {
+        // flex-grow: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $white;
+    }
+
+    &__body {
+        font-size: 10px;
+        color: $text_lite;
+        font-weight: 500;
+
+        .joke {
+            font-size: 18px;
+            color: $text;
+        }
+    }
+
+    &__info {
+        margin-top: 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .tag {
+        color: $text;
+        font-size: 10px;
+        letter-spacing: 2px;
+        font-weight: 500;
+        line-height: 140%;
+        text-transform: uppercase;
+
+        padding: 6px 20px;
+        background: $white;
+        border-radius: 6px;
+    }
+
+    &--mini {
+        background: $white;
+        box-shadow: $box_shad;
+
+        .joke { 
+            font-size: 14px;
+        }
+    }
+}
+
+// .card {
+//     padding: 67px 40px 40px;
+// }

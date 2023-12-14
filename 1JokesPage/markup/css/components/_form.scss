@@ -5,6 +5,7 @@ form {
         display: flex;
         gap: 15px;
         align-items: center;
+        margin-bottom: 10px;
     }
 }
 
@@ -39,4 +40,31 @@ input[type="radio"]:checked+span:after {
     height: 10px;
     border-radius: 50%;
     background: $text;
+}
+
+#searchindField {
+    display: block;
+    width: 100%;
+    border: 2px solid $text;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 20px 0;
+
+    &::placeholder {
+        color: $text_lite;
+    }
+}
+
+#getAJoke {
+
+
+    color: $white;
+    line-height: $btn-lh;
+    font-weight: $btn-fw;
+    font-size: $btn-fs;
+
+    padding: 10px 40px;
+    background: $button_bg;
+    border-radius: $btn-brgrad;
+    border: none;
 }
