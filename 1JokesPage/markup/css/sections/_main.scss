@@ -8,6 +8,20 @@ section {
     }
 }
 
+@media (min-width: 768px) {
+    section {
+        padding: 40px 0;
+    }
+}
+
+@media (min-width: 992px) {
+    main {
+        &>section {
+            flex-grow: 1;
+        }
+    }
+}
+
 #jokesList,
 #likedJokesList {
     display: flex;
@@ -18,15 +32,53 @@ section {
 .backdrop {
     position: absolute;
     inset: 0;
-    transform: translateX(100%);
-    // background: $backdrop_bg;
+    transform: translateX(100%); //chenge for opening burger
+    transition: $icons;
 
     .burger {
         background: $lite_bg;
         height: 100%;
 
         #likedJokesList {
-            padding-top: 88px;
+            padding-top: 68px;
         }
+    }
+}
+
+@media (min-width: 768px) {
+    .backdrop {
+        background: $backdrop_bg;
+
+        .burger {
+            width: 60vw;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            #likedJokesList {
+                padding-top: 48px;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .backdrop {
+        position: static;
+        transform: translateX(0);
+        background: none;
+        width: fit-content;
+
+        .burger {
+            width: 480px;
+            position: static;
+        }
+    }
+}
+
+
+.backdrop {
+    &.isOpen {
+        transform: translateX(0)
     }
 }

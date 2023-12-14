@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <header>
+        <!-- <header>
             <div class="container">
                 <label class="burgerMenu">
                     <input id="burgerIconCheck" type="checkbox" name="open-close">
@@ -17,7 +17,7 @@
                     <span>Favourite</span>
                 </label>
             </div>
-        </header>
+        </header> -->
         <main>
             <section>
                 <div class="container">
@@ -35,7 +35,7 @@
                             <span></span>
                             <span>From caterogies</span>
                         </label>
-                        <ul class="jokesCategories" id="jokesCategories">
+                        <ul class="jokesCategories chooseVisible" id="jokesCategories">
                             <li>animal</li>
                             <li>career</li>
                             <li class="current">celebrity</li>
@@ -46,7 +46,7 @@
                             <span></span>
                             <span>Search</span>
                         </label>
-                        <input id="searchindField" type="search" placeholder="Free text search...">
+                        <input id="searchindField" type="search" class="searchindField chooseVisible" placeholder="Free text search...">
                         <button id="getAJoke">Get a joke</button>
                     </form>
                     <ul id="jokesList">
@@ -79,7 +79,15 @@
                     </ul>
                 </div>
             </section>
-            <div class="backdrop">
+            <!--
+                .isOpen - for open backdrop
+             -->
+            <div class="backdrop "> 
+                <label class="burgerMenu">
+                    <input id="burgerIconCheck" type="checkbox" name="open-close">
+                    <span class="burgerIcon"></span>
+                    <span>Favourite</span>
+                </label>
                 <section class="burger">
                     <div class="container">
                         <!-- <h3>Favourite</h3> -->

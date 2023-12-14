@@ -1,24 +1,3 @@
-header {
-    .burgerMenu {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 50;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        cursor: pointer;
-
-        &:last-child {
-            color: $text_lite;
-            font-weight: 500;
-        }
-
-        input {
-            visibility: hidden;
-        }
-    }
-}
 
 
 

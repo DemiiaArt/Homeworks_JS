@@ -37,10 +37,16 @@ body {
 }
 
 .wrapper {
-    // display: flex; //desktop only
     position: relative;
     overflow: hidden;
 }
+
+@media (min-width: 992px) {
+    main {
+        display: flex; 
+    }
+}
+
 
 .container {
     margin: 0 auto;
@@ -55,7 +61,7 @@ body {
 
 @media (min-width: 992px) {
     .container {
-        max-width: 680px;
+        max-width: 760px;
     }
 }
 

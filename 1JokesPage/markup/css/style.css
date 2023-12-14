@@ -350,6 +350,11 @@ body {
   overflow: hidden;
 }
 
+@media (min-width: 992px) {
+  main {
+    display: flex;
+  }
+}
 .container {
   margin: 0 auto;
   padding: 0 20px;
@@ -362,7 +367,7 @@ body {
 }
 @media (min-width: 992px) {
   .container {
-    max-width: 680px;
+    max-width: 760px;
   }
 }
 ul {
@@ -435,24 +440,6 @@ h3 {
   content: "\e902";
 }
 
-header .burgerMenu {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-}
-header .burgerMenu:last-child {
-  color: #ABABAB;
-  font-weight: 500;
-}
-header .burgerMenu input {
-  visibility: hidden;
-}
-
 section {
   padding: 20px 0;
 }
@@ -462,6 +449,16 @@ section .headerText {
   margin-bottom: 78px;
 }
 
+@media (min-width: 768px) {
+  section {
+    padding: 40px 0;
+  }
+}
+@media (min-width: 992px) {
+  main > section {
+    flex-grow: 1;
+  }
+}
 #jokesList,
 #likedJokesList {
   display: flex;
@@ -473,13 +470,45 @@ section .headerText {
   position: absolute;
   inset: 0;
   transform: translateX(100%);
+  transition: all 300ms ease-in-out;
 }
 .backdrop .burger {
   background: #F8F8F8;
   height: 100%;
 }
 .backdrop .burger #likedJokesList {
-  padding-top: 88px;
+  padding-top: 68px;
+}
+
+@media (min-width: 768px) {
+  .backdrop {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .backdrop .burger {
+    width: 60vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .backdrop .burger #likedJokesList {
+    padding-top: 48px;
+  }
+}
+@media (min-width: 992px) {
+  .backdrop {
+    position: static;
+    transform: translateX(0);
+    background: none;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .backdrop .burger {
+    width: 480px;
+    position: static;
+  }
+}
+.backdrop.isOpen {
+  transform: translateX(0);
 }
 
 .icon-Vector,
@@ -493,7 +522,47 @@ section .headerText {
   top: 20px;
   right: 20px;
 }
+.card--mini .icon {
+  top: 20px;
+  right: 20px;
+}
 
+@media (min-width: 768px) {
+  .icon {
+    top: 40px;
+    right: 40px;
+  }
+}
+.burgerMenu {
+  position: fixed;
+  top: 20px;
+  left: -155px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #ABABAB;
+  font-weight: 500;
+}
+.burgerMenu input {
+  visibility: hidden;
+}
+
+@media (min-width: 768px) {
+  .burgerMenu {
+    top: 40px;
+    left: -175px;
+  }
+}
+@media (min-width: 992px) {
+  .burgerMenu {
+    top: 40px;
+    left: 40px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+}
 .burgerIcon {
   background: #333;
   border-radius: 50%;
@@ -527,6 +596,12 @@ section .headerText {
   transition: all 300ms ease-in-out;
 }
 
+@media (min-width: 992px) {
+  .burgerIcon {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
 #burgerIconCheck:checked + .burgerIcon:before {
   top: 47%;
   left: 25%;
@@ -537,28 +612,6 @@ section .headerText {
   top: 47%;
   left: 25%;
   transform: rotate(45deg) translateX(0);
-}
-
-.jokesCategories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0;
-}
-.jokesCategories li {
-  padding: 7px 15px 5px;
-  color: #ABABAB;
-  text-transform: uppercase;
-  line-height: 133%;
-  letter-spacing: 2px;
-  font-size: 12px;
-  font-weight: 500;
-  border: 2px solid #F8F8F8;
-  border-radius: 6px;
-}
-.jokesCategories .current {
-  color: #333;
-  background: #F8F8F8;
 }
 
 .card {
@@ -613,6 +666,17 @@ section .headerText {
   font-size: 14px;
 }
 
+@media (min-width: 768px) {
+  .card {
+    padding: 67px 40px 45px;
+  }
+  .card--mini {
+    padding: 47px 20px 20px;
+  }
+  .card--mini .joke {
+    font-size: 14px;
+  }
+}
 form {
   padding-bottom: 40px;
 }
@@ -655,19 +719,58 @@ input[type=radio]:checked + span:after {
   background: #333;
 }
 
-#searchindField {
+.searchindField {
   display: block;
-  width: 100%;
+  width: 100px;
   border: 2px solid #333;
   border-radius: 10px;
   padding: 10px 15px;
   margin: 20px 0;
+  position: absolute;
+  top: 350px;
+  left: -100%;
 }
-#searchindField::-moz-placeholder {
+.searchindField::-moz-placeholder {
   color: #ABABAB;
 }
-#searchindField::placeholder {
+.searchindField::placeholder {
   color: #ABABAB;
+}
+.searchindField.chooseVisible {
+  position: static;
+  width: 100%;
+}
+
+.jokesCategories {
+  position: relative;
+}
+.jokesCategories li {
+  padding: 7px 15px 5px;
+  color: #ABABAB;
+  text-transform: uppercase;
+  line-height: 133%;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 2px solid #F8F8F8;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transition: all 300ms ease-in-out;
+}
+.jokesCategories .current {
+  color: #333;
+  background: #F8F8F8;
+}
+.jokesCategories.chooseVisible {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+.jokesCategories.chooseVisible li {
+  position: static;
 }
 
 #getAJoke {

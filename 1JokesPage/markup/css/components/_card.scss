@@ -13,7 +13,7 @@
     }
 
     .jokeIcon {
-        // flex-grow: 0;
+        // flex-grow: 1;
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -58,6 +58,19 @@
 
         .joke { 
             font-size: 14px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        padding: 67px 40px 45px;
+
+        &--mini {
+            padding: 47px 20px 20px;
+            .joke { 
+                font-size: 14px;
+            }
         }
     }
 }

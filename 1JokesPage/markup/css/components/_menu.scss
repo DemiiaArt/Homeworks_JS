@@ -1,3 +1,39 @@
+.burgerMenu {
+    position: fixed;
+    top: 20px;
+    left: -155px;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: $text_lite;
+    font-weight: 500;
+
+    input {
+        visibility: hidden;
+    }
+}
+
+@media (min-width: 768px) {
+    .burgerMenu {
+        top: 40px;
+        left: -175px;
+    }
+}
+
+@media (min-width: 992px) {
+    .burgerMenu {
+        top: 40px;
+        left: 40px;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+}
+
+
+
+
 .burgerIcon {
     background: $text;
     border-radius: 50%;
@@ -33,6 +69,13 @@
     }
 }
 
+@media (min-width: 992px) {
+    .burgerIcon {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
 //Animation open-close
 #burgerIconCheck:checked+.burgerIcon:before {
     top: 47%;
@@ -45,3 +88,6 @@
     left: 25%;
     transform: rotate(45deg) translateX(0);
 }
+
+
+// transform: translateX(100%)
