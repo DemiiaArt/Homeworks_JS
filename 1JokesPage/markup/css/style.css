@@ -455,7 +455,7 @@ section .headerText {
   }
 }
 @media (min-width: 992px) {
-  main > section {
+  section {
     flex-grow: 1;
   }
 }
@@ -475,9 +475,10 @@ section .headerText {
 .backdrop .burger {
   background: #F8F8F8;
   height: 100%;
+  padding-top: 40px;
 }
 .backdrop .burger #likedJokesList {
-  padding-top: 68px;
+  padding-top: 48px;
 }
 
 @media (min-width: 768px) {
@@ -548,19 +549,31 @@ section .headerText {
 .burgerMenu input {
   visibility: hidden;
 }
+.isOpen .burgerMenu {
+  left: auto;
+  right: 20px;
+}
 
 @media (min-width: 768px) {
   .burgerMenu {
     top: 40px;
     left: -175px;
   }
+  .isOpen .burgerMenu {
+    right: 40px;
+  }
 }
 @media (min-width: 992px) {
   .burgerMenu {
     top: 40px;
+    right: auto;
     left: 40px;
     flex-direction: row-reverse;
     justify-content: flex-end;
+  }
+  .isOpen .burgerMenu {
+    right: auto;
+    left: 40px;
   }
 }
 .burgerIcon {
@@ -729,6 +742,7 @@ input[type=radio]:checked + span:after {
   position: absolute;
   top: 350px;
   left: -100%;
+  transition: all 300ms ease-in-out;
 }
 .searchindField::-moz-placeholder {
   color: #ABABAB;

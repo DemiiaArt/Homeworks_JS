@@ -13,21 +13,36 @@
     input {
         visibility: hidden;
     }
+
+    .isOpen & {
+        left: auto;
+        right: 20px;
+    }
 }
 
 @media (min-width: 768px) {
     .burgerMenu {
         top: 40px;
         left: -175px;
+
+        .isOpen & {
+            right: 40px;
+        }
     }
 }
 
 @media (min-width: 992px) {
     .burgerMenu {
         top: 40px;
+        right: auto;
         left: 40px;
         flex-direction: row-reverse;
         justify-content: flex-end;
+
+        .isOpen & {
+            right: auto;
+            left: 40px;
+        }
     }
 }
 

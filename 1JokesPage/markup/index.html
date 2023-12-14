@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="shortcut icon" href="./img/emoji_emoticon_happy_laugh_icon.svg" type="image/jpg">
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <div class="wrapper">
         <!-- <header>
@@ -35,6 +37,9 @@
                             <span></span>
                             <span>From caterogies</span>
                         </label>
+                        <!--
+                        .chooseVisible - for open jokesCategories
+                         -->
                         <ul class="jokesCategories chooseVisible" id="jokesCategories">
                             <li>animal</li>
                             <li>career</li>
@@ -46,7 +51,11 @@
                             <span></span>
                             <span>Search</span>
                         </label>
-                        <input id="searchindField" type="search" class="searchindField chooseVisible" placeholder="Free text search...">
+                        <!--
+                        .chooseVisible - for open searchindField
+                         -->
+                        <input id="searchindField" type="search" class="searchindField chooseVisible"
+                            placeholder="Free text search...">
                         <button id="getAJoke">Get a joke</button>
                     </form>
                     <ul id="jokesList">
@@ -54,7 +63,7 @@
                             <div class="jokeIcon">icon</div>
                             <div class="card__body">
                                 <p>ID: <a href="#">XNaAxUduSw6zANDaIEab7A <span class="icon-link"></span></a></p>
-                                <p class="joke">No one truly knows who's Chuck Norris' real father. 
+                                <p class="joke">No one truly knows who's Chuck Norris' real father.
                                     No one is biologically strong enough for this. He must've conceived himself.</p>
                                 <div class="card__info">
                                     <p>Last update: <span>1923 hours ago</span></p>
@@ -67,7 +76,7 @@
                             <span>icon</span>
                             <div class="card__body">
                                 <p>ID: <a href="#">XNaAxUduSw6zANDaIEab7A <span class="icon-link"></span></a></p>
-                                <p class="joke">No one truly knows who's Chuck Norris' real father. 
+                                <p class="joke">No one truly knows who's Chuck Norris' real father.
                                     No one is biologically strong enough for this. He must've conceived himself.</p>
                                 <div class="card__info">
                                     <p>Last update: <span>1923 hours ago</span></p>
@@ -82,21 +91,20 @@
             <!--
                 .isOpen - for open backdrop
              -->
-            <div class="backdrop "> 
+            <div class="backdrop ">
                 <label class="burgerMenu">
                     <input id="burgerIconCheck" type="checkbox" name="open-close">
                     <span class="burgerIcon"></span>
                     <span>Favourite</span>
                 </label>
-                <section class="burger">
+                <div class="burger">
                     <div class="container">
-                        <!-- <h3>Favourite</h3> -->
                         <ul id="likedJokesList">
                             <li class="card card--mini">
                                 <span>icon</span>
                                 <div class="card__body">
                                     <p>ID: <a href="#">XNaAxUduSw6zANDaIEab7A <span class="icon-link"></span></a></p>
-                                    <p class="joke">No one truly knows who's Chuck Norris' real father. 
+                                    <p class="joke">No one truly knows who's Chuck Norris' real father.
                                         No one is biologically strong enough for this. He must've conceived himself.</p>
                                     <div class="card__info">
                                         <p>Last update: <span>1923 hours ago</span></p>
@@ -119,7 +127,8 @@
                                 <span>icon</span>
                                 <div class="card__body">
                                     <p>ID: <a href="#">XNaAxUduSw6zANDaIEab7A <span class="icon-link"></span></a></p>
-                                    <p class="joke">Chuck Norris doesn't bench press weight sets, he bench presses FREIGHT TRAINS!</p>
+                                    <p class="joke">Chuck Norris doesn't bench press weight sets, he bench presses
+                                        FREIGHT TRAINS!</p>
                                     <div class="card__info">
                                         <p>Last update: <span>1923 hours ago</span></p>
                                     </div>
@@ -128,10 +137,11 @@
                             </li>
                         </ul>
                     </div>
-                </section>
+                </div>
             </div>
         </main>
     </div>
     <script src="./js/main.js" type="module"></script>
 </body>
+
 </html>

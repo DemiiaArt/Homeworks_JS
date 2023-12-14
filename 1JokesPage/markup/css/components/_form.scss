@@ -54,6 +54,8 @@ input[type="radio"]:checked+span:after {
     top: 350px;
     left: -100%;
 
+    transition: $icons;
+
     &::placeholder {
         color: $text_lite;
     }
@@ -63,6 +65,7 @@ input[type="radio"]:checked+span:after {
         width: 100%;
     }
 }
+
 
 .jokesCategories {
     position: relative;

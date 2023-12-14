@@ -1,6 +1,7 @@
 
 section {
     padding: 20px 0;
+
     .headerText {
         margin-top: 0;
         font-weight: 700;
@@ -15,10 +16,8 @@ section {
 }
 
 @media (min-width: 992px) {
-    main {
-        &>section {
-            flex-grow: 1;
-        }
+    section {
+        flex-grow: 1;
     }
 }
 
@@ -38,9 +37,10 @@ section {
     .burger {
         background: $lite_bg;
         height: 100%;
+        padding-top: 40px;
 
         #likedJokesList {
-            padding-top: 68px;
+            padding-top: 48px;
         }
     }
 }
