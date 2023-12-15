@@ -42,10 +42,11 @@ input[name="jokeFinder"]:checked+span:after {
     background: $text;
 }
 
+
 .searchindField {
     display: block;
     width: 100px;
-    border: 2px solid $text;
+    outline: 2px solid $text_lite;
     border-radius: 10px;
     padding: 10px 15px;
     margin: 20px 0;
@@ -54,10 +55,14 @@ input[name="jokeFinder"]:checked+span:after {
     top: 350px;
     left: -100%;
 
-    transition: $icons;
+    transition: width 300ms ease-in-out;
 
     &::placeholder {
         color: $text_lite;
+    }
+
+    &:focus {
+        outline: 2px solid $text;
     }
 
     &.chooseVisible {
@@ -68,15 +73,13 @@ input[name="jokeFinder"]:checked+span:after {
 
 
 .jokesCategories {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: -200%;
+    transition: $icons;
 
     label {
         margin-bottom: 0;
-
-        // position: absolute;
-        // top: 0;
-        // left: -100%;
-        // transition: $icons;
 
         span {
             padding: 7px 15px 5px;
@@ -104,17 +107,13 @@ input[name="jokeFinder"]:checked+span:after {
 
 
     &.chooseVisible {
+        position: static;
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
         margin: 20px 0;
-
-        // label {
-        //     position: static;
-        // }
     }
 }
-
 
 
 

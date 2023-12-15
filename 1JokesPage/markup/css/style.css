@@ -316,21 +316,21 @@ template {
 
 @font-face {
   font-family: "Roboto";
-  src: url("../Roboto-Regular.woff2") format("woff2"), url("../Roboto-Regular.woff") format("woff");
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
-  src: url("../Roboto-Medium.woff2") format("woff2"), url("../Roboto-Medium.woff") format("woff");
+  src: url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
-  src: url("../Roboto-Bold.woff2") format("woff2"), url("../Roboto-Bold.woff") format("woff");
+  src: url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -347,7 +347,6 @@ body {
 
 .wrapper {
   position: relative;
-  overflow: hidden;
 }
 
 @media (min-width: 992px) {
@@ -468,14 +467,20 @@ section .headerText {
 
 .backdrop {
   position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
   inset: 0;
-  transform: translateX(100%);
-  transition: all 300ms ease-in-out;
+  width: 0;
 }
 .backdrop .burger {
+  position: relative;
+  right: 0;
   background: #F8F8F8;
   height: 100%;
   padding-top: 40px;
+  opacity: 0;
+  width: 0;
+  transition: width 100ms ease-in-out;
 }
 .backdrop .burger #likedJokesList {
   padding-top: 48px;
@@ -506,10 +511,16 @@ section .headerText {
   .backdrop .burger {
     width: 480px;
     position: static;
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 .backdrop.isOpen {
-  transform: translateX(0);
+  width: 100%;
+}
+.backdrop.isOpen .burger {
+  opacity: 1;
+  width: 100%;
 }
 
 .icon-Vector,
@@ -520,26 +531,27 @@ section .headerText {
   background: none;
 }
 
-.icon {
+.likeIcon {
   position: absolute;
   top: 20px;
   right: 20px;
+  padding: 0;
 }
-.card--mini .icon {
+.card--mini .likeIcon {
   top: 20px;
   right: 20px;
 }
 
 @media (min-width: 768px) {
-  .icon {
+  .likeIcon {
     top: 40px;
     right: 40px;
   }
 }
 .burgerMenu {
-  position: fixed;
+  position: absolute;
   top: 20px;
-  left: -155px;
+  right: 20px;
   z-index: 50;
   display: flex;
   align-items: center;
@@ -551,31 +563,19 @@ section .headerText {
 .burgerMenu input {
   visibility: hidden;
 }
-.isOpen .burgerMenu {
-  left: auto;
-  right: 20px;
-}
 
 @media (min-width: 768px) {
   .burgerMenu {
     top: 40px;
-    left: -175px;
-  }
-  .isOpen .burgerMenu {
     right: 40px;
   }
 }
 @media (min-width: 992px) {
   .burgerMenu {
     top: 40px;
-    right: auto;
-    left: 40px;
+    right: 305px;
     flex-direction: row-reverse;
     justify-content: flex-end;
-  }
-  .isOpen .burgerMenu {
-    right: auto;
-    left: 40px;
   }
 }
 .burgerIcon {
@@ -642,8 +642,8 @@ section .headerText {
   margin: 0;
 }
 .card .jokeIcon {
-  width: 40px;
   height: 40px;
+  padding: 11px 10px;
   border-radius: 50%;
   background: #fff;
 }
@@ -651,13 +651,19 @@ section .headerText {
   font-size: 10px;
   color: #ABABAB;
   font-weight: 500;
+  flex-grow: 1;
+}
+.card__body > p {
+  line-height: 0;
+  margin-bottom: 5px;
 }
 .card__body .joke {
   font-size: 18px;
   color: #333;
+  line-height: 144%;
 }
 .card__info {
-  margin-top: 28px;
+  margin-top: 23px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -737,14 +743,14 @@ input[name=jokeFinder]:checked + span:after {
 .searchindField {
   display: block;
   width: 100px;
-  border: 2px solid #333;
+  outline: 2px solid #ABABAB;
   border-radius: 10px;
   padding: 10px 15px;
   margin: 20px 0;
   position: absolute;
   top: 350px;
   left: -100%;
-  transition: all 300ms ease-in-out;
+  transition: width 300ms ease-in-out;
 }
 .searchindField::-moz-placeholder {
   color: #ABABAB;
@@ -752,13 +758,19 @@ input[name=jokeFinder]:checked + span:after {
 .searchindField::placeholder {
   color: #ABABAB;
 }
+.searchindField:focus {
+  outline: 2px solid #333;
+}
 .searchindField.chooseVisible {
   position: static;
   width: 100%;
 }
 
 .jokesCategories {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: -200%;
+  transition: all 300ms ease-in-out;
 }
 .jokesCategories label {
   margin-bottom: 0;
@@ -784,6 +796,7 @@ input[name=jokeFinder]:checked + span:after {
   background: #F8F8F8;
 }
 .jokesCategories.chooseVisible {
+  position: static;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;

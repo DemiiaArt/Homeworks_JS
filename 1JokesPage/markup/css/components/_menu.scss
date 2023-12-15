@@ -1,7 +1,7 @@
 .burgerMenu {
-    position: fixed;
+    position: absolute;
     top: 20px;
-    left: -155px;
+    right: 20px;
     z-index: 50;
     display: flex;
     align-items: center;
@@ -13,36 +13,21 @@
     input {
         visibility: hidden;
     }
-
-    .isOpen & {
-        left: auto;
-        right: 20px;
-    }
 }
 
 @media (min-width: 768px) {
     .burgerMenu {
         top: 40px;
-        left: -175px;
-
-        .isOpen & {
-            right: 40px;
-        }
+        right: 40px;
     }
 }
 
 @media (min-width: 992px) {
     .burgerMenu {
         top: 40px;
-        right: auto;
-        left: 40px;
+        right: 305px;
         flex-direction: row-reverse;
         justify-content: flex-end;
-
-        .isOpen & {
-            right: auto;
-            left: 40px;
-        }
     }
 }
 

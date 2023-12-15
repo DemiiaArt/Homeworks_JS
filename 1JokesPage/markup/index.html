@@ -25,62 +25,44 @@
                 <div class="container">
                     <p class="headerText">MSI 2020</p>
                     <h1>Hey!</h1>
-                    <form>
+                    <form id="jokeForm">
                         <h2>Let’s try to find a joke for you:</h2>
                         <label>
-                            <input type="radio" name="jokeFinder" id="random" checked>
+                            <input type="radio" name="jokeFinder" id="random" value = "random">
                             <span></span>
                             <span>Random</span>
                         </label>
                         <label>
-                            <input type="radio" name="jokeFinder" id="caterogies">
+                            <input type="radio" name="jokeFinder" id="categories" value = "categories">
                             <span></span>
-                            <span>From caterogies</span>
+                            <span>From categories</span>
                         </label>
                         <!--
                         .chooseVisible - for open jokesCategories
                          -->
-                        <ul class="jokesCategories chooseVisible" id="jokesCategories">
-                            <li>
+                        <ul class="jokesCategories" id="jokesCategories">
+                            <!-- <li>
                                 <label>
                                     <input type="radio" name="jokeCat" value="animal">
                                     <span>animal</span> 
                                 </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="radio" name="jokeCat" value="career" checked>
-                                    <span>career</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="radio" name="jokeCat" value="celebrity">
-                                    <span>celebrity</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="radio" name="jokeCat" value="dev">
-                                    <span>dev</span>
-                                </label>
-                            </li>
+                            </li> -->
                         </ul>
                         <label>
-                            <input type="radio" name="jokeFinder" id="search">
+                            <input type="radio" name="jokeFinder" id="search" value = "search">
                             <span></span>
                             <span>Search</span>
                         </label>
                         <!--
                         .chooseVisible - for open searchindField
                          -->
-                        <input id="searchindField" type="search" class="searchindField chooseVisible"
+                        <input id="searchindField" type="search" class="searchindField"
                             placeholder="Free text search...">
                         <button id="getAJoke">Get a joke</button>
                     </form>
                     <ul id="jokesList">
-                        <li class="card">
-                            <div class="jokeIcon">icon</div>
+                        <!-- <li class="card">
+                            <div class="jokeIcon"><img src="./img/jokeIcon.png" alt="joke icon" width="20" height="18"></div>
                             <div class="card__body">
                                 <p>ID: <a href="#">XNaAxUduSw6zANDaIEab7A <span class="icon-link"></span></a></p>
                                 <p class="joke">No one truly knows who's Chuck Norris' real father.
@@ -90,33 +72,20 @@
                                     <span class="tag">celebrity</span>
                                 </div>
                             </div>
-                            <button class="icon icon-heart"></button>
-                        </li>
-                        <li class="card">
-                            <span>icon</span>
-                            <div class="card__body">
-                                <p>ID: <a href="#">XNaAxUduSw6zANDaIEab7A <span class="icon-link"></span></a></p>
-                                <p class="joke">No one truly knows who's Chuck Norris' real father.
-                                    No one is biologically strong enough for this. He must've conceived himself.</p>
-                                <div class="card__info">
-                                    <p>Last update: <span>1923 hours ago</span></p>
-                                    <span class="tag">celebrity</span>
-                                </div>
-                            </div>
-                            <button class="icon icon-Vector"></button>
-                        </li>
+                            <button class="likeIcon icon-heart"></button>
+                        </li> -->
                     </ul>
                 </div>
             </section>
+            <label class="burgerMenu">
+                <input id="burgerIconCheck" type="checkbox" name="open-close">
+                <span class="burgerIcon"></span>
+                <span>Favourite</span>
+            </label>
             <!--
                 .isOpen - for open backdrop
              -->
             <div class="backdrop ">
-                <label class="burgerMenu">
-                    <input id="burgerIconCheck" type="checkbox" name="open-close">
-                    <span class="burgerIcon"></span>
-                    <span>Favourite</span>
-                </label>
                 <div class="burger">
                     <div class="container">
                         <ul id="likedJokesList">
@@ -130,7 +99,7 @@
                                         <p>Last update: <span>1923 hours ago</span></p>
                                     </div>
                                 </div>
-                                <button class="icon icon-heart"></button>
+                                <button class="likeIcon icon-heart"></button>
                             </li>
                             <li class="card card--mini">
                                 <span>icon</span>
@@ -141,7 +110,7 @@
                                         <p>Last update: <span>1923 hours ago</span></p>
                                     </div>
                                 </div>
-                                <button class="icon icon-heart"></button>
+                                <button class="likeIcon icon-heart"></button>
                             </li>
                             <li class="card card--mini">
                                 <span>icon</span>
@@ -153,7 +122,7 @@
                                         <p>Last update: <span>1923 hours ago</span></p>
                                     </div>
                                 </div>
-                                <button class="icon icon-heart"></button>
+                                <button class="likeIcon icon-heart"></button>
                             </li>
                         </ul>
                     </div>
