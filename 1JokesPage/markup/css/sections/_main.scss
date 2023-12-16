@@ -32,6 +32,7 @@ section {
     display: flex;
     flex-direction: row-reverse;
     inset: 0;
+    pointer-events: none;
 
     width: 0;
 
@@ -48,6 +49,10 @@ section {
 
         #likedJokesList {
             padding-top: 48px;
+
+            li {
+
+            }
         }
     }
 }
@@ -75,6 +80,7 @@ section {
         transform: translateX(0);
         background: none;
         width: fit-content;
+        pointer-events: initial;
 
         .burger {
             width: 480px;
@@ -89,6 +95,7 @@ section {
 .backdrop {
     &.isOpen {
         width: 100%;
+        pointer-events: initial;
 
         .burger {
             opacity: 1;

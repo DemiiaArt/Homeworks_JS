@@ -58,9 +58,13 @@
         border-radius: 6px;
     }
 
-    &--mini {
+    #likedJokesList & {
         background: $white;
         box-shadow: $box_shad;
+
+        .tag {
+            background: $lite_bg;
+        }
 
         .joke { 
             font-size: 14px;
@@ -72,7 +76,7 @@
     .card {
         padding: 67px 40px 45px;
 
-        &--mini {
+        #likedJokesList & {
             padding: 47px 20px 20px;
             .joke { 
                 font-size: 14px;
@@ -80,7 +84,3 @@
         }
     }
 }
-
-// .card {
-//     padding: 67px 40px 40px;
-// }

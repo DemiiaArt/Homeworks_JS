@@ -6,20 +6,20 @@
     background: none;
 }
 
-.likeIcon {
+#likeIcon {
     position: absolute;
     top: 20px;
     right: 20px;
     padding: 0;
 
-    .card--mini & {
+    #likedJokesList & {
         top: 20px;
         right: 20px;
     }
 }
 
 @media (min-width: 768px) {
-    .likeIcon {
+    #likeIcon {
         top: 40px;
         right: 40px;
     }

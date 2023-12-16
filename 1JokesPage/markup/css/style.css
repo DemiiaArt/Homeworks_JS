@@ -470,6 +470,7 @@ section .headerText {
   display: flex;
   flex-direction: row-reverse;
   inset: 0;
+  pointer-events: none;
   width: 0;
 }
 .backdrop .burger {
@@ -485,7 +486,6 @@ section .headerText {
 .backdrop .burger #likedJokesList {
   padding-top: 48px;
 }
-
 @media (min-width: 768px) {
   .backdrop {
     background: rgba(0, 0, 0, 0.3);
@@ -507,6 +507,7 @@ section .headerText {
     background: none;
     width: -moz-fit-content;
     width: fit-content;
+    pointer-events: initial;
   }
   .backdrop .burger {
     width: 480px;
@@ -517,6 +518,7 @@ section .headerText {
 }
 .backdrop.isOpen {
   width: 100%;
+  pointer-events: initial;
 }
 .backdrop.isOpen .burger {
   opacity: 1;
@@ -531,19 +533,19 @@ section .headerText {
   background: none;
 }
 
-.likeIcon {
+#likeIcon {
   position: absolute;
   top: 20px;
   right: 20px;
   padding: 0;
 }
-.card--mini .likeIcon {
+#likedJokesList #likeIcon {
   top: 20px;
   right: 20px;
 }
 
 @media (min-width: 768px) {
-  .likeIcon {
+  #likeIcon {
     top: 40px;
     right: 40px;
   }
@@ -679,11 +681,14 @@ section .headerText {
   background: #fff;
   border-radius: 6px;
 }
-.card--mini {
+#likedJokesList .card {
   background: #fff;
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
 }
-.card--mini .joke {
+#likedJokesList .card .tag {
+  background: #F8F8F8;
+}
+#likedJokesList .card .joke {
   font-size: 14px;
 }
 
@@ -691,10 +696,10 @@ section .headerText {
   .card {
     padding: 67px 40px 45px;
   }
-  .card--mini {
+  #likedJokesList .card {
     padding: 47px 20px 20px;
   }
-  .card--mini .joke {
+  #likedJokesList .card .joke {
     font-size: 14px;
   }
 }
@@ -706,6 +711,8 @@ form label {
   gap: 15px;
   align-items: center;
   margin-bottom: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 input[name=jokeFinder] {
