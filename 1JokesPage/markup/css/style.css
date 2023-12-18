@@ -341,8 +341,12 @@ body {
   font-size: 18px;
   line-height: 144%;
   color: #333;
-  max-height: 100vh;
+  min-height: 100vh;
   max-width: 100vw;
+}
+
+main {
+  min-height: 100vh;
 }
 
 .wrapper {
