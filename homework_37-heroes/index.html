@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <section>
+        <h1>Heroes</h1>
+        <table id="heroTable" class="heroTable">
+            <tr>
+                <th>Name</th>
+                <th>Comics</th>
+                <th>Favourite</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <td>Iron Man</td>
+                <td>Marvel</td>
+                <td><input type="checkbox" name="Favourite"></td>
+                <td><button id="deleteBtn">⤬ delete</button></td>
+            </tr>
+        </table>
+    </section>
+    <section class="addHero">
+        <h2>Want to add a Hero?</h2>
+        <p>Fill the form!</p>
+        <form id="postForm">
+            <label>
+                <input type="text" placeholder="Hero`s name" id="nameInput">
+            </label>
+            <label>
+                <select name="comics" id="comics" >
+                    <option value="">Comics</option>
+                    <option value="DC">DC</option>
+                    <option value="Marvel">Marvel</option>
+                </select>
+            </label>
+            <label>
+                Favourite
+                <input type="checkbox" name="createFavourite">
+            </label>
+            <button type="submit" id="addBtn">Add</button>
+        </form>
+    </section>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
