@@ -1,4 +1,8 @@
 header {
+    background: gray;
+}
+
+.headerWrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,11 +12,11 @@ header {
     padding: 20px 0;
 }
 
-span {
+.navLinks span {
     padding: 0 40px;
+    cursor: pointer;
 }
 
-.container {
-    margin: 0 auto;
-    max-width: 1140px;
+.navLinks span:hover {
+    color: #00e1ff;
 }

@@ -1,35 +1,32 @@
 import React, { Component } from "react";
 import reactLogo from "./logo192.png";
 import "../styles/Header.css";
-
-class NavLink extends Component {
-  render() {
-    return <span>{this.props.page}</span>;
-  }
-}
+import "../styles/Header.css";
 
 class SearchingInput extends Component {
   render() {
     return (
       <label className="searchField">
-        <input type='search' placeholder="searching..." ></input>
+        <input type="search" placeholder="searching..."></input>
         <button>🔍</button>
       </label>
-    )
+    );
   }
 }
 
 export default class Header extends Component {
   render() {
     return (
-      <header className="container">
-        <img src={reactLogo} alt="React logo" width={50} height={50} />
-        <nav className="navLinks">
-          <NavLink page="Rect Develop Page" />
-          <NavLink page="My account" />
-          <NavLink page="FAQ" />
-        </nav>
-        <SearchingInput />
+      <header>
+        <div className="container headerWrapper">
+          <img src={reactLogo} alt="React logo" width={50} height={50} />
+          <nav className="navLinks">
+            <span>Rect Develop Page</span>
+            <span>My account</span>
+            <span>FAQ</span>
+          </nav>
+          <SearchingInput />
+        </div>
       </header>
     );
   }
