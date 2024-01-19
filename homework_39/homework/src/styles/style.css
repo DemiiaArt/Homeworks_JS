@@ -1,0 +1,23 @@
+table {
+    text-align: center;
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+td, th {
+    padding: 10px 10px;
+    border: 1px solid gray;
+}
+
+.chooze {
+    background: rgb(142, 218, 142);
+    font-weight: 700;
+}
+
+.halfGreen {
+    border: 10px solid black;
+}
+
+.fullGreen {
+    border: 20px solid black;
+}
+
