@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import './styles/style.css'
+import "./styles/style.css";
 
 const animals = [
-  { type: `turtle`, icon: `🐢`, isGreen: true },
+  { type: `turtle`, icon: `🐢`, isGreen: false },
   { type: `octopus`, icon: `🐙`, isGreen: false },
   { type: `fish`, icon: `🐠`, isGreen: false },
   { type: `flamingo`, icon: `🦩`, isGreen: false },
@@ -13,25 +13,29 @@ class RenderList extends Component {
   constructor(props) {
     super(props);
 
-
-    // const chooseInterval = setInterval (()=> {
-    //   console.log(this.state.list);
-    //   this.setState({
-    //     list: this.state.list.forEach(item => item.isGreen = true)
-    //   })
-
-    //   // this.state.list.find('') === 0 && clearInterval(chooseInterval)
-    // }, 2000) 
-
     this.state = {
-      animals: [...props.list],
-    }
+      list: [...props.list],
+    };
 
-    // this.chooseInterval = setInterval (()=> {
-    //   const randomIndex = Math.floor(Math.random() * animals.length);
-    // }, 2000)
+    const chooseInterval = setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * animals.length);
+      const updatedList = this.state.list.map((item, index) => ({
+        ...item,
+        isGreen: index === randomIndex ? true : item.isGreen,
+      }));
+
+      this.setState({ list: updatedList });
+      // console.log(this.props.list);
+
+      const greenCount = updatedList.filter((item) => item.isGreen).length;
+      const halfLength = Math.ceil(updatedList.length / 2);
+
+      updatedList.every((item) => item.isGreen) &&
+        clearInterval(chooseInterval);
+    }, 2000);
   }
 
+  state = Object.assign({}, this.props);
 
   render() {
     return (
@@ -46,7 +50,7 @@ class RenderList extends Component {
           <tbody>
             {this.state.list &&
               this.state.list.map((item, index) => (
-                <tr key={index} className = {item.isGreen ? 'chooze' : ''}>
+                <tr key={index} className={item.isGreen ? "chooze" : ""}>
                   <td>{item.type}</td>
                   <td>{item.icon}</td>
                 </tr>
