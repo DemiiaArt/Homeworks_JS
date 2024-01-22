@@ -15,6 +15,7 @@ class RenderList extends Component {
 
     this.state = {
       list: [...props.list],
+      borderSize: 0,
     };
 
     const chooseInterval = setInterval(() => {
@@ -24,23 +25,29 @@ class RenderList extends Component {
         isGreen: index === randomIndex ? true : item.isGreen,
       }));
 
-      this.setState({ list: updatedList });
-      // console.log(this.props.list);
-
       const greenCount = updatedList.filter((item) => item.isGreen).length;
       const halfLength = Math.ceil(updatedList.length / 2);
 
-      updatedList.every((item) => item.isGreen) &&
-        clearInterval(chooseInterval);
+      if (greenCount === halfLength) {
+        this.setState({borderSize: 10})
+      } else if (greenCount === updatedList.length) {
+        this.setState ({borderSize: 20});
+        clearInterval(this.chooseInterval);
+      }
+      this.setState({ list: updatedList });
     }, 2000);
   }
 
   state = Object.assign({}, this.props);
 
   render() {
+
+    const borderStyle = {
+      border: `${this.state.borderSize}px solid black`
+    }
     return (
       <React.Fragment>
-        <table>
+        <table style={borderStyle}>
           <thead>
             <tr>
               <th>type</th>

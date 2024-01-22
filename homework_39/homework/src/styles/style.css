@@ -12,12 +12,3 @@ td, th {
     background: rgb(142, 218, 142);
     font-weight: 700;
 }
-
-.halfGreen {
-    border: 10px solid black;
-}
-
-.fullGreen {
-    border: 20px solid black;
-}
-
