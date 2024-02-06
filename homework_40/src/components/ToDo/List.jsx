@@ -5,17 +5,18 @@ export default class List extends Component {
 
   render() {
     console.log("this", this);
+    let {list, actions} = this.props;
     return (
       <div className="list">
         <ul>
-          {this.props.list.map((item, index) => (
+          {list.map((item, index) => (
             <li key={item.id}>{item.title}</li>
           ))}
         </ul>
 
         {this.props.list.length > 0 && (
           <div className="buttonBox">
-            {this.props.actions.map((item) => (
+            {actions.map((item) => (
               <button onClick={item.action}>{item.text}</button>
             ))}
           </div>
