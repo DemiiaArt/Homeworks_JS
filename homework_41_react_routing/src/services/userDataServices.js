@@ -18,7 +18,7 @@ export const editItem = (id, obj) =>
     body: JSON.stringify(obj),
   }).then((data) => data.json());
 
-export const addItem = (obj) =>
+export const addUser = (obj) =>
   fetch(API, {
     method: "POST",
     headers: {

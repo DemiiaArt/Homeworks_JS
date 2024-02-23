@@ -1,32 +1,30 @@
-import React, {useState} from "react";
-import Form from '../components/form/Form.jsx'
-import Container from '@mui/material/Container';
+import React, { useState } from "react";
+import Container from "@mui/material/Container";
 import InputField from "../components/form/InputField.jsx";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import { Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import getUsers, {addItem} from '../services/userDataServices.js'
+import { addUser } from "../services/userDataServices.js";
 
 export default function CreateUser() {
-    const [newUser, setNewUser] = useState({})
-    
-    const handleSubmitUser = (e) => {
-        e.preventDefault();
-        addItem(newUser).then(() => {
-            setNewUser({});
-        }).catch(error => {
-            console.error("Error adding user:", error);
-        });
-        console.log(getUsers());
-        // e.target.reset();
-    } 
+  const [newUser, setNewUser] = useState({ address: {} });
 
-    console.log(newUser);
+  const handleSubmitUser = (e) => {
+    e.preventDefault();
+    addUser(newUser)
+      .then(() => {
+        setNewUser({});
+      })
+      .catch((error) => {
+        console.error("Error adding user:", error);
+      });
+    e.target.reset();
+  };
+
   return (
     <Container maxWidth="sm">
       <h3>Create User</h3>
-      {/* <Form onSubmitForm={handleSubmitUser} setUser={setNewUser}/> */}
       <form onSubmit={handleSubmitUser}>
         <Stack spacing={2}>
           <InputField
@@ -55,7 +53,10 @@ export default function CreateUser() {
           />
           <InputField
             liftValue={(value) =>
-              setNewUser((prevState) => ({ ...prevState, city: value }))
+              setNewUser((prevState) => ({
+                ...prevState,
+                address: { ...prevState.address, city: value },
+              }))
             }
             type="text"
             input="City"
@@ -63,7 +64,10 @@ export default function CreateUser() {
           />
           <InputField
             liftValue={(value) =>
-              setNewUser((prevState) => ({ ...prevState, street: value }))
+              setNewUser((prevState) => ({
+                ...prevState,
+                address: { ...prevState.address, street: value },
+              }))
             }
             type="text"
             input="Street"

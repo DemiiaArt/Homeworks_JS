@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { getUserInfo } from "../services/userDataServices.js";
-import Form from "../components/form/Form.jsx";
+// import Form from "../components/form/Form.jsx";
 import { useParams } from "react-router-dom";
-import { Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Container from "@mui/material/Container";
 import InputField from "../components/form/InputField.jsx";
@@ -18,18 +18,15 @@ export default function User() {
   useEffect(() => {
     (async () => {
       let item = await getUserInfo(userId);
-      // console.log(item);
       setUser(item);
     })();
   }, [userId]);
-
-  // console.log(user);
 
   const handleEditUser = async (e) => {
     e.preventDefault();
     try {
       await editItem(userId, user);
-      console.log("User data updated successfully:", user);
+      // console.log("User data updated successfully:", user);
     } catch (error) {
       console.error("Error updating user:", error);
     }

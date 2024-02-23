@@ -7,8 +7,6 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import SendIcon from "@mui/icons-material/Send";
 import Stack from "@mui/material/Stack";
 
-import { Switch, Route, Link } from "react-router-dom";
-
 export default function UserRow({deleteUser, user }) {
   return (
     <ListItem>
